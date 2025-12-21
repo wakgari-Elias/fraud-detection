@@ -1,0 +1,59 @@
+# =========================
+# Virtual Environment
+# =========================
+venv/
+.env/
+
+# =========================
+# Data (DO NOT TRACK DATA)
+# =========================
+data/
+*.csv
+*.zip
+
+# =========================
+# Python cache files
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# Jupyter Notebook
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# VS Code
+# =========================
+.vscode/*
+!.vscode/settings.json
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs and temporary files
+# =========================
+*.log
+*.tmp
+
+# =========================
+# Model artifacts (optional)
+# =========================
+models/*.pkl
+models/*.joblib
+
+# =========================
+# Test / coverage
+# =========================
+.coverage
+htmlcov/
+
+# =========================
+# Pytest
+# =========================
+.pytest_cache/
