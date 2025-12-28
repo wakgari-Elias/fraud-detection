@@ -131,4 +131,17 @@ Explore and build the project using the Jupyter notebooks in order:
 | **SHAP Explainability & Recommendations** | ⏳ Planned | Final insights and business rules |
 ---
 Challenge completed – Dec 2025  
-Built by Nathanael Dereje
+Built by Elias Wakgari
+## Task-2: Model Building and Evaluation
+
+**Branch:** `task-2`  
+**Notebook:** `notebooks/modeling.ipynb`
+
+This task contains:
+
+- Train-test split of Fraud_Data.csv
+- Baseline Logistic Regression model
+- Random Forest / XGBoost ensemble models
+- Handling class imbalance with SMOTE
+- Model evaluation: AUC-PR, F1-score, confusion matrix
+- Stratified K-Fold cross-validation
