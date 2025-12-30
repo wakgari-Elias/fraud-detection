@@ -145,3 +145,102 @@ This task contains:
 - Handling class imbalance with SMOTE
 - Model evaluation: AUC-PR, F1-score, confusion matrix
 - Stratified K-Fold cross-validation
+- Task 3: Model Explainability (Fraud Detection)
+🎯 Objective
+
+The objective of Task 3 is to interpret the predictions of the best-performing fraud detection model using model explainability techniques. By applying SHAP (SHapley Additive exPlanations), we identify the key drivers behind fraud predictions and translate these insights into actionable business recommendations.
+
+🧠 Model Used
+
+Model: Random Forest Classifier
+
+Reason for Selection:
+
+Strong performance on imbalanced fraud data
+
+Handles non-linear relationships well
+
+Provides built-in feature importance for baseline comparison
+
+The model was trained on preprocessed and resampled data produced in Task 1 (EDA & Feature Engineering) and Task 2 (Modeling).
+
+📊 Feature Importance (Baseline)
+
+Extracted built-in feature importance from the Random Forest model
+
+Visualized the top 10 most important features
+
+Used as a baseline to compare against SHAP explanations
+
+🔍 SHAP Analysis
+Global Explainability
+
+Generated SHAP Summary Plot
+
+Shows:
+
+Overall feature importance
+
+Direction of impact on fraud prediction
+
+Distribution of feature effects across all samples
+
+Local Explainability (Individual Predictions)
+
+SHAP force plots were generated for:
+
+True Positive (Fraud correctly detected)
+
+False Positive (Legitimate transaction flagged as fraud)
+
+False Negative (Fraud transaction missed by the model)
+
+These plots explain why the model made each specific decision.
+
+🔎 Interpretation & Insights
+Top Fraud Drivers Identified (SHAP)
+
+Time since signup
+
+Transaction frequency
+
+Purchase amount
+
+Hour of day
+
+Device / browser related features
+
+Key Observations
+
+Very short time between signup and purchase strongly increases fraud risk
+
+High transaction velocity is a major fraud indicator
+
+Some legitimate users are flagged due to unusually high purchase amounts
+
+A small number of fraud cases are missed when fraud behavior closely resembles normal activity
+
+SHAP explanations align well with Random Forest feature importance, increasing trust in the model.
+
+💡 Business Recommendations
+
+Add extra verification for new accounts
+
+Transactions occurring shortly after signup should require additional checks
+(Driven by high SHAP impact of time_since_signup)
+
+Monitor high-velocity transactions
+
+Multiple transactions within short time windows should trigger alerts
+(Driven by SHAP importance of transaction frequency)
+
+Adaptive thresholds for high-value purchases
+
+Large transactions should be evaluated in context (user history, time, device)
+(Driven by SHAP insights on purchase amount)
+
+These recommendations directly map model explanations to real-world fraud prevention strategies.
+
+✅ Conclusion
+
+SHAP provides transparency into the fraud detection model by explaining both global trends and individual predictions. This interpretability enables better trust, regulatory compliance, and data-driven business decisions.
