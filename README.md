@@ -244,3 +244,113 @@ These recommendations directly map model explanations to real-world fraud preven
 ✅ Conclusion
 
 SHAP provides transparency into the fraud detection model by explaining both global trends and individual predictions. This interpretability enables better trust, regulatory compliance, and data-driven business decisions.
+
+# Fraud Detection Capstone – Improved E-commerce & Bank Transactions
+
+![CI Badge](https://github.com/wakgari-Elias/fraud-detection/actions/workflows/ci.yml/badge.svg)
+
+## Project Overview
+
+This project improves fraud detection for e-commerce and bank transactions using advanced machine learning and explainable AI techniques.  
+It focuses on:
+
+- Detecting fraudulent transactions accurately
+- Handling highly imbalanced datasets
+- Providing interpretable results for finance stakeholders
+
+---
+
+## Business Problem
+
+Financial institutions and e-commerce platforms lose significant money to fraud.  
+Traditional detection systems either miss fraud (false negatives) or block legitimate users (false positives).  
+
+**Goal:** Build a reliable, transparent, and interpretable model that balances detection accuracy with minimal business disruption.
+
+---
+
+## Solution Overview
+
+- **Data Analysis & Preprocessing:** Cleaned and engineered features from raw transaction data.
+- **Feature Engineering:** Added time-based features (hour_of_day, day_of_week, time_since_signup), transaction frequency, and velocity.
+- **Modeling:** Trained Logistic Regression (baseline) and Random Forest models.
+- **Explainability:** Integrated SHAP to identify the top drivers of fraud predictions.
+- **Engineering Improvements:** Modular codebase, unit tests, and CI/CD pipeline for reliability.
+
+---
+
+## Key Results
+
+| Metric | Value |
+|--------|-------|
+| F1 Score (Random Forest) | 0.88 |
+| AUC-PR | 0.91 |
+| Confusion Matrix | See `notebooks/modeling.ipynb` |
+
+---
+
+## Quick Start
+
+```bash
+# Clone repo
+git clone https://github.com/wakgari-Elias/fraud-detection.git
+cd fraud-detection
+
+# Create virtual environment (optional but recommended)
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run modular code
+python src/main.py
+fraud-detection/
+├── data/
+│   ├── raw/
+│   └── processed/
+├── notebooks/
+├── src/
+│   ├── config.py
+│   ├── data_loader.py
+│   ├── features.py
+│   ├── model.py
+│   ├── evaluate.py
+│   └── explain.py
+├── tests/
+├── models/
+├── .github/
+│   └── workflows/ci.yml
+├── requirements.txt
+└── README.md
+
+Demo
+
+Interactive dashboard (Streamlit) planned for final submission
+
+SHAP visualizations available in notebooks/shap-explainability.ipynb
+
+Technical Details
+
+Data: Fraud_Data.csv, IpAddress_to_Country.csv, creditcard.csv
+
+Models: Random Forest, Logistic Regression
+
+Feature Engineering: Time features, transaction frequency, categorical encoding
+
+Evaluation: Stratified train-test split, F1, AUC-PR, confusion matrix
+
+Explainability: SHAP summary and force plots
+
+Future Improvements
+
+Real-time streaming detection for live transactions
+
+Dashboard integration with interactive SHAP plots
+
+Hyperparameter optimization with GridSearchCV / Optuna
+
+Author
+
+Elias Wakgari
