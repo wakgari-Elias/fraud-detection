@@ -57,3 +57,9 @@ htmlcov/
 # Pytest
 # =========================
 .pytest_cache/
+
+# Add these lines if not already there
+figures/
+*.png
+*.jpg
+*.jpeg
