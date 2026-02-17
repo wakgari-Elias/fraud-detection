@@ -1,7 +1,7 @@
 # Improved Detection of Fraud Cases for E-Commerce and Bank Transactions
 **Adey Innovations Inc. – Fraud Detection Project**  
 *December 2025*
-[![Unit Tests](https://github.com/wakgari-Elias/fraud-detection/actions/workflows/unittests.yml/badge.svg?branch=capstone-improvement)](https://github.com/wakgari-Elias/fraud-detection/actions/workflows/unittests.yml)
+
 An end-to-end machine learning project to develop accurate and robust fraud detection models for e-commerce and bank credit card transactions. The models incorporate geolocation analysis, transaction velocity patterns, and advanced ensemble techniques while addressing severe class imbalance and providing explainable insights via SHAP.
 https://github.com/wakgari-Elias/fraud-detection
 ---
@@ -431,3 +431,4 @@ Build a trustworthy fraud detection system that:
 - A simple interactive dashboard bridges the gap between data scientists and business users
 
 This capstone demonstrates engineering maturity, business alignment, and communication skills — ready for finance-sector roles.
+[![Unit Tests](https://github.com/wakgari-Elias/fraud-detection/actions/workflows/unittests.yml/badge.svg?branch=capstone-improvement)](https://github.com/wakgari-Elias/fraud-detection/actions/workflows/unittests.yml)
