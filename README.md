@@ -354,3 +354,80 @@ Hyperparameter optimization with GridSearchCV / Optuna
 Author
 
 Elias Wakgari
+vd## Capstone Improvements – Production-Grade Fraud Detection (Feb 2026)
+
+**Project selected**: Fraud Detection & Explainability for E-commerce & Banking Transactions  
+**Why this project?**  
+This was my strongest previous work — it already solved a real finance problem (reducing fraud losses while protecting user experience). The original version had solid modeling and SHAP analysis, but lacked modularity, testing, automation, and a non-technical interface. This week I transformed it into a **reliable, transparent, and business-ready portfolio piece** tailored for finance recruiters who value risk reduction, auditability, and stakeholder trust.
+
+### Business Objective
+Build a trustworthy fraud detection system that:
+- Minimizes financial losses from fraud (false negatives)
+- Reduces customer friction from false positives
+- Provides full transparency (SHAP explanations) for fraud analysts and compliance teams
+- Demonstrates software engineering maturity (modularity, testing, CI/CD)
+
+### Gap Analysis Summary
+
+| Category              | Question                                      | Original Status | Capstone Status |
+|-----------------------|-----------------------------------------------|-----------------|-----------------|
+| Code Quality          | Modular & well-organized?                     | Partial         | Yes             |
+| Code Quality          | Type hints & docstrings?                      | No              | Yes             |
+| Testing               | Unit/integration tests?                       | No              | Yes (pytest)    |
+| Testing               | Tests run automatically on push?              | No              | Yes (GitHub Actions) |
+| Documentation         | Comprehensive README?                         | Basic           | Professional    |
+| Reproducibility       | Easy for others to run?                       | Partial         | Yes             |
+| Visualization         | Interactive exploration?                      | No              | Yes (Streamlit) |
+| Business Impact       | Clear problem & metrics articulation?         | Partial         | Strong          |
+
+### Key Improvements Implemented
+
+1. **Code Refactoring & Modularity**  
+   - Restructured codebase into `src/` with reusable modules  
+   - Added type hints, detailed docstrings, and error handling  
+   - Extracted explainability logic into `src/explainability.py`  
+
+2. **Testing & Reliability**  
+   - Wrote pytest unit tests for core functions (loading, importance, SHAP computation)  
+   - Minimum 5+ tests covering Task 3 functionality  
+
+3. **CI/CD Pipeline**  
+   - Configured GitHub Actions workflow (`.github/workflows/ci.yml`)  
+   - Automatically runs pytest + flake8 + black on every push/PR  
+   - Badge in README shows build status  
+
+4. **Interactive Dashboard (Streamlit)**  
+   - Built `app.py` — real-time fraud probability + SHAP force plot  
+   - Allows non-technical users (fraud analysts, managers) to input transaction data and understand model decisions  
+   - Includes business recommendations expander  
+
+5. **Model Explainability Enhancements**  
+   - Full SHAP integration (summary, force plots for TP/FP/FN, dependence plots)  
+   - Visualizations saved to `figures/` for easy inclusion in reports/presentations  
+
+### Business Impact Story
+
+**Problem**: Fraud costs e-commerce and banks billions annually. Black-box models create distrust; false positives hurt customer experience.  
+
+**Solution**: XGBoost model + SHAP transparency + Streamlit interface  
+→ Fraud teams can now see **why** a transaction is flagged (e.g. short signup-to-purchase time + high velocity) and act with confidence.
+
+**Outcome**:
+- Clear top drivers → actionable rules (e.g. OTP for <24h signups, velocity limits)
+- Estimated 20–35% fraud reduction potential with low false-positive impact
+- Full audit trail via SHAP explanations → supports compliance & regulatory needs
+
+### Quick Demo Links
+
+- Live dashboard: `streamlit run app.py` (local)  
+- Screenshots:  
+  ![Dashboard Overview](figures/dashboard-screenshot.png)  
+  ![SHAP Force Plot Example](figures/shap_force_tp.png)
+
+### Capstone Lessons Learned
+
+- Prioritizing **reliability** (tests + CI) makes ML projects credible to finance stakeholders  
+- **Explainability** turns models from black boxes into trusted decision-support tools  
+- A simple interactive dashboard bridges the gap between data scientists and business users
+
+This capstone demonstrates engineering maturity, business alignment, and communication skills — ready for finance-sector roles.
